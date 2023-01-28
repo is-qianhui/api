@@ -1,9 +1,13 @@
 # api
 
-### js、css
+### css
+```
+<link rel="stylesheet" href="https://cdn.staticaly.com/gh/quinhua/api@main/css/background/1.css">
+```
+
+### js
 ```
 <script src="https://cdn.staticaly.com/gh/quinhua/api@main/js/click/aixin.js"></script>
-<link rel="stylesheet" href="https://cdn.staticaly.com/gh/quinhua/api@main/css/background/1.css">
 ```
 
 ### svg
