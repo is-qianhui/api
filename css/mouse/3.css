@@ -1,0 +1,9 @@
+*{
+    cursor: url(https://cdn.staticaly.com/gh/quinhua/pics@main/cc/c3.webp), auto;
+}
+
+a,input,select,textarea
+button,
+img,svg{
+    cursor: url(https://cdn.staticaly.com/gh/quinhua/pics@main/cc/c33.webp), auto;
+}
