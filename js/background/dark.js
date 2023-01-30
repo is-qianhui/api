@@ -1,12 +1,7 @@
-/*
-    <script>
-        function addDarkmodeWidget() {
-            new Darkmode().showWidget();
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-*/
-
+function addDarkmodeWidget() {
+   new Darkmode().showWidget();
+}
+ window.addEventListener('load', addDarkmodeWidget);
 
 !(function (e, t) {
 	"object" == typeof exports && "object" == typeof module
