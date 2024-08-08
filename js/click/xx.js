@@ -1,8 +1,4 @@
 (function () {
-    var username = '钱辉'; var usertext = "一支穿云箭，千军万马来相见！";
-    var consoleA = "color:#fff;background:#6cf;padding:5px 0;border: 1px solid #6cf;";
-    var consoleB = "color:#6cf;background:none;padding:5px 0;border: 1px solid #6cf;";
-    console.log(`\n %c ${username} %c ${usertext}`, consoleA, consoleB);
     var a_idx = 0;
     window.onclick = function (event) {
         var a = new Array("⭐");
