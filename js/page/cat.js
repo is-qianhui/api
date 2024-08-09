@@ -3,13 +3,14 @@ const catCss = `
         position: fixed;
         bottom: 40px;
         right: -5px;
-        width: 57px;
-        height: 70px;
+        width: 37px;
+        height: 50px;
         background: url(https://cdn.jsdelivr.net/gh/is-qianhui/api@main/svg/other/cat.svg);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         transition: background .3s;
+        z-index:99;
     }
     #maomao:hover {
         background-position: 60px 50%;

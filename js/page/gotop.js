@@ -1,6 +1,6 @@
-function loadJS(url, callback) {
-    var script = document.createElement('script')
-    var fn = callback || function () { };
+const loadJsForCallback = (url, callback) => {
+    const script = document.createElement('script')
+    const fn = callback || function () { };
     script.type = 'text/javascript';
     if (script.readyState) {
         script.onreadystatechange = function () {
@@ -17,18 +17,13 @@ function loadJS(url, callback) {
     script.src = url;
     document.getElementsByTagName('head')[0].appendChild(script);
 }
-!(function () {
-    loadJS("https://cdn.staticfile.net/jquery/3.6.4/jquery.js", () => {
-        gotoTop1();
-        gotop1();
-    })
-})();
-function gotop1() {
-    var gotop_width="30px";
-    var gotop_height="30px";
-    var gotop_border_radius="30%";
-    var gotop_body_color="#000000";//#6cf
-    var gotop_svg_color="#000000";//#6cf
+
+const gotopQh = () => {
+    var gotop_width = "30px";
+    var gotop_height = "30px";
+    var gotop_border_radius = "30%";
+    var gotop_body_color = "#000000";//#6cf
+    var gotop_svg_color = "#000000";//#6cf
 
     $("body").append(`
     <div id="goToTop">
@@ -38,12 +33,12 @@ function gotop1() {
                 d="M6.03 7.03a.75.75 0 0 1-1.06-1.06l4-4a.75.75 0 0 1 1.06 0l4 4a.75.75 0 0 1-1.06 1.06l-2.72-2.72v5.44c0 1.947.245 3.321.74 4.366c.486 1.026 1.243 1.8 2.396 2.49a.75.75 0 1 1-.772 1.287c-1.347-.808-2.34-1.785-2.98-3.134c-.63-1.33-.884-2.956-.884-5.009V4.31L6.03 7.03z"
                 fill="currentColor"></path>
         </g></svg></div>`);
-        $('#goToTop').css({"position": "fixed", "right":"20px","bottom":"50px","cursor":"pointer","width":`${gotop_width}`,"height":`${gotop_height}`,"border":`4px ${gotop_body_color} solid`,"border-radius":`${gotop_border_radius}`});
-        $("#goToTop svg").css({"width": `${gotop_width}`, "height": `${gotop_height}`,"color":`${gotop_svg_color}`});
+    $('#goToTop').css({ "position": "fixed", "right": "20px", "bottom": "50px", "cursor": "pointer", "width": `${gotop_width}`, "height": `${gotop_height}`, "border": `4px ${gotop_body_color} solid`, "border-radius": `${gotop_border_radius}` });
+    $("#goToTop svg").css({ "width": `${gotop_width}`, "height": `${gotop_height}`, "color": `${gotop_svg_color}` });
     $('#goToTop').gotoTop({
         offset: 250, //距离顶部的位置
         speed: 300, //移动到顶部的速度
-        iconSpeed : 300, //icon动画样式的速度*/
+        iconSpeed: 300, //icon动画样式的速度*/
         animationShow: {
             'transform': 'translate(0,0)',
             'transition': 'transform .5s ease-in-out'
@@ -54,7 +49,7 @@ function gotop1() {
         } //icon动画样式隐藏时
     });
 }
-function gotoTop1() {
+const gotoTopQh = () => {
     (function ($) {
         jQuery.fn.gotoTop = function (opt) {
             var ele = this;
@@ -106,3 +101,8 @@ function gotoTop1() {
         }
     }(jQuery));
 }
+
+loadJsForCallback("https://cdn.staticfile.net/jquery/3.6.4/jquery.js", () => {
+    gotoTopQh();
+    gotopQh();
+})

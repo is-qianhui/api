@@ -1,6 +1,6 @@
-function loadJS(url, callback) {
-  var script = document.createElement('script')
-  var fn = callback || function () { };
+const loadJsForCallback = (url, callback) => {
+  const script = document.createElement('script')
+  const fn = callback || function () { };
   script.type = 'text/javascript';
   if (script.readyState) {
     script.onreadystatechange = function () {
@@ -17,12 +17,6 @@ function loadJS(url, callback) {
   script.src = url;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
-
-!(function () {
-  loadJS("https://cdn.staticfile.net/jquery/3.6.4/jquery.js", () => {
-    xingxing();
-  })
-})();
 
 const xingxing = () => {
   $("body").append($("<span class='js-cursor-container'></span>"));
@@ -134,3 +128,7 @@ const xingxing = () => {
 
   if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
 };
+
+loadJsForCallback("https://cdn.staticfile.net/jquery/3.6.4/jquery.js", () => {
+  xingxing();
+})

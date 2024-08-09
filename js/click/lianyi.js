@@ -1,6 +1,6 @@
-function loadJS(url, callback) {
-    var script = document.createElement('script')
-    var fn = callback || function () { };
+const loadJsForCallback = (url, callback) => {
+    const script = document.createElement('script')
+    const fn = callback || function () { };
     script.type = 'text/javascript';
     if (script.readyState) {
         script.onreadystatechange = function () {
@@ -17,17 +17,13 @@ function loadJS(url, callback) {
     script.src = url;
     document.getElementsByTagName('head')[0].appendChild(script);
 }
-!(function () {
-    loadJS("https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js", () => {
-        lianyi();
-    })
-})();
 
-function lianyi() {
+
+const lianyi = () => {
     $(document).click(function (e) {
         var lysize = 50;
         var lycolor = "	#00FFFF";
-        
+
         $('body').append("<div class='liany'>");
         $('.liany').css({
             position: 'fixed',
@@ -46,3 +42,7 @@ function lianyi() {
         })
     })
 }
+
+loadJsForCallback("https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js", () => {
+    lianyi();
+})
