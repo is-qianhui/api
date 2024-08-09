@@ -1,0 +1,9 @@
+*{
+    cursor: url(https://is-qianhui.github.io/picx-images-hosting/mouse/c8.webp), auto;
+}
+
+a,input,select,textarea
+button,
+img,svg{
+    cursor: url(https://is-qianhui.github.io/picx-images-hosting/mouse/cc8.webp), auto;
+}
